@@ -7,6 +7,9 @@ on:
     paths:
       - 'resourcepack/**'
 
+permissions:
+  contents: write # ←ここを追加！
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # ←ここを追加
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create resourcepack ZIP file
         run: zip -r resourcepack.zip resourcepack
