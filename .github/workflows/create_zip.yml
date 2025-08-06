@@ -1,0 +1,27 @@
+name: Create Resourcepack ZIP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'resourcepack/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create resourcepack ZIP file
+        run: zip -r resourcepack.zip resourcepack
+
+      - name: Commit and push ZIP file
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add resourcepack.zip
+          git commit -m "feat: Update resourcepack.zip"
+          git push
