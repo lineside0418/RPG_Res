@@ -14,14 +14,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # ←ここを追加
 
       - name: Create resourcepack ZIP file
         run: zip -r resourcepack.zip resourcepack
 
       - name: Commit and push ZIP file
         run: |
-          git config --global user.name 'lineside0418'
-          git config --global user.email 'maincraft0418yuta@gmail.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add resourcepack.zip
           git commit -m "feat: Update resourcepack.zip"
           git push
