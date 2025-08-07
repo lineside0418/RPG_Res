@@ -22,6 +22,7 @@ jobs:
 
       - name: Create resourcepack ZIP file
         run: |
+          rm -f resourcepack.zip
           cd resourcepack
           zip -r ../resourcepack.zip .
 
