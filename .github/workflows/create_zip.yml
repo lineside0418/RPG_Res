@@ -21,7 +21,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create resourcepack ZIP file
-        run: zip -r resourcepack.zip resourcepack
+        run: |
+          cd resourcepack
+          zip -r ../resourcepack.zip .
 
       - name: Commit and push ZIP file
         run: |
