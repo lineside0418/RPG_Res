@@ -68,6 +68,5 @@
         {"predicate": {"custom_model_data":10707}, "model": "minecraft:item/1/07/07"},
         {"predicate": {"custom_model_data":10708}, "model": "minecraft:item/1/07/08"},
         {"predicate": {"custom_model_data":10709}, "model": "minecraft:item/1/07/09"}
-
     ]
 }
